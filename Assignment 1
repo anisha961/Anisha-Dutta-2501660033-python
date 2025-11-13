@@ -1,0 +1,89 @@
+# Task 1: SETUP AND INTRODUCTION
+
+# Name: Anisha Dutta 
+# Roll No:2501660033
+# Course: BCA Cybersecurity
+# Semester: 1st
+# Subject: Problem Solving with Python
+# Assignment: Unit-1 Mini Project
+# Title: Student Profile Console App
+# Date: 13 November 2025
+print("Welcome to the Student Profile Console App!")
+print("This tool helps you create and manage basic student information using Python.")
+
+
+
+# Task 2: INPUT AND VARIABLES
+
+#Collecting student details
+student_name = input("Enter your full name: ")
+roll_number = int(input("Enter your roll number: "))
+program = input("Enter your program : ")
+university = input("Enter your university name: ")
+city = input("Enter your city: ")
+age = int(input("Enter your age: "))
+hobby = input("Enter your hobby: ")
+
+#Student profile display
+print("\nSTUDENT PROFILE SYSTEM")
+print(f"Name       :{student_name}")
+print(f"Roll Number: {roll_number}")
+print(f"Program    : {program}")
+print(f"University : {university}")
+print(f"City       : {city}")
+print(f"Age        : {age}")
+print(f"Hobby      : {hobby}")
+
+
+# Task 3: OPERATORS DEMONSTRATION
+# Input two numbers
+num1 = int(input("\nEnter first number: "))
+num2 = int(input("Enter second number: "))
+# Arithmetic Operators
+print("\nArithmetic Operators")
+print(f"{num1}+{num2}={num1+num2}")
+print(f"{num1}-{num2}={num1-num2}")
+print(f"{num1}*{num2}={num1*num2}")
+print(f"{num1}/{num2}={num1/num2}")
+print(f"{num1}%{num2}={num1%num2}")
+print(f"{num1}**{num2}={num1**num2}")
+print(f"{num1}//{num2}={num1//num2}")
+
+# Assignment Operators
+print("\nAssignment Operators")
+a= num1
+a+= num2
+print(f"a+=b = {a}")
+a -= num2
+print(f"a-=b = {a}")
+a *= num2
+print(f"a*=b = {a}")
+a /= num2
+print(f"a/=b = {a}")
+
+# Comparison Operators
+print("\nComparison Operators")
+print(f"{num1}=={num2}= {num1 == num2}")
+print(f"{num1}!={num2}= {num1 != num2}")
+print(f"{num1}>{num2}= {num1 > num2}")
+print(f"{num1}<{num2}={num1 < num2}")
+print(f"{num1}>={num2}= {num1 >= num2}")
+print(f"{num1}<={num2}  {num1 <= num2}")
+
+# Logical Operators
+print("\nLogical Operators")
+print(f"{num1} > 0 and {num2} > 0  =  {num1 > 0 and num2 > 0}")
+print(f"{num1} > 0 or {num2} > 0  = {num1 > 0 or num2 > 0}")
+print(f"not({num1} > 0)  =  {not(num1 > 0)}")
+
+# Identity Operators
+print("\nIdentity Operators")
+print(f"{num1} is {num2}  =  {num1 is num2}")
+print(f"{num1} is not {num2}  =  {num1 is not num2}")
+
+# Membership Operators
+print("\nMembership Operators")
+sample_list = [num1, num2, 100]
+print(f"{num1} in {sample_list} = {num1 in sample_list}")
+print(f"50 not in {sample_list} = {50 not in sample_list}")
+
