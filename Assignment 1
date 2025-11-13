@@ -87,7 +87,7 @@ sample_list = [num1, num2, 100]
 print(f"{num1} in {sample_list} = {num1 in sample_list}")
 print(f"50 not in {sample_list} = {50 not in sample_list}")
 
-# Task 6: Bonus Task (Extra Credit)
+# EXTRA CREDIT
 save_profile = input("\nDo you want to save your profile? (yes/no): ").strip().lower()
 
 if save_profile == "yes":
