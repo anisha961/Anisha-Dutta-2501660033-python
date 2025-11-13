@@ -1,1 +1,117 @@
+# Name       : Anisha Dutta
+# Date       : 13-Nov-2025
+# Project    : Library Book Management System
 
+books = {}
+borrowed = {}
+
+# Task 2: Add Book
+def add_books():
+    print("\nEnter details for 5 books:")
+    for i in range(5):
+        book_id = input(f"\nBook {i+1} ID: ")
+        title = input("Title: ")
+        author = input("Author: ")
+        copies = int(input("Copies: "))
+        books[book_id] = {"title": title, "author": author, "copies": copies}
+    print("\nBooks added successfully!")
+
+# Task 3: Display Books
+def view_books():
+    print("\nAvailable Books:")
+    print("Book ID\tTitle\t\t\t\tAuthor\t\t\tCopies")
+    print("-" * 80)
+    for book_id, info in books.items():
+        print(f"{book_id}\t{info['title'][:30]:<30}\t{info['author'][:30]:<30}\t{info['copies']}")
+
+# Task 3: Search Book
+def search_book():
+    print("\nSearch Options:")
+    print("1. By Book ID")
+    print("2. By Title (partial match)")
+    choice = input("Enter choice (1/2): ")
+
+    if choice == "1":
+        book_id = input("Enter Book ID: ")
+        if book_id in books:
+            info = books[book_id]
+            print(f"\nBook Found: {book_id} - {info['title']} by {info['author']} ({info['copies']} copies)")
+        else:
+            print("Book Not Found.")
+    elif choice == "2":
+        title_part = input("Enter part of title: ").lower()
+        found = False
+        for book_id, info in books.items():
+            if title_part in info['title'].lower():
+                print(f"\nBook Found: {book_id} - {info['title']} by {info['author']} ({info['copies']} copies)")
+                found = True
+        if not found:
+            print("Book Not Found.")
+    else:
+        print("Invalid choice.")
+
+# Task 4: Borrow Book
+def borrow_book():
+    student = input("\nStudent Name: ")
+    book_id = input("Book ID to borrow: ")
+
+    if book_id in books:
+        if books[book_id]["copies"] > 0:
+            books[book_id]["copies"] -= 1
+            borrowed[student] = book_id
+            print(f"{student} borrowed {book_id} successfully.")
+        else:
+            print("No copies available.")
+    else:
+        print("Book ID not found.")
+
+# Task 5: Return Book
+def return_book():
+    student = input("\nStudent Name: ")
+    book_id = input("Book ID to return: ")
+
+    if borrowed.get(student) == book_id:
+        books[book_id]["copies"] += 1
+        del borrowed[student]
+        print(f"{student} returned {book_id} successfully.")
+    else:
+        print("No matching borrow record found.")
+
+    print("\nBorrowed Books:")
+    borrowed_list = [f"{s} -> {b}" for s, b in borrowed.items()]
+    for entry in borrowed_list:
+        print(entry)
+
+# Task 6: Menu Loop
+def main():
+    print("\nWELCOME TO ANISHA'S LIBRARY SYSTEM")
+    print("Name: ANISHA \tDate: 13-Nov-2025")
+
+    while True:
+        print("\nMENU:")
+        print("1. Add Book")
+        print("2. View Books")
+        print("3. Search Book")
+        print("4. Borrow Book")
+        print("5. Return Book")
+        print("6. Exit")
+
+        choice = input("Enter your choice (1-6): ")
+
+        if choice == "1":
+            add_books()
+        elif choice == "2":
+            view_books()
+        elif choice == "3":
+            search_book()
+        elif choice == "4":
+            borrow_book()
+        elif choice == "5":
+            return_book()
+        elif choice == "6":
+            print("Thank you for using Anisha's library!!!!")
+            break
+        else:
+            print("Try again! Use the given options.")
+
+main()
