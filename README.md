@@ -8,4 +8,3 @@ ASSIGNMENT 1 OUTPUT ON TERMINAL
 <img width="1207" height="957" alt="image" src="https://github.com/user-attachments/assets/6af17267-d5b7-4ff3-8788-091b8904bf0d" />
 
 
-ASSIGNMENT 2 OUTPUT ON TERMINAL
